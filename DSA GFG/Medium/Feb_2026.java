@@ -1,4 +1,4 @@
-// Indexes of Subarray Sum
+// 004-> Indexes of Subarray Sum
 class Solution {
     static ArrayList<Integer> subarraySum(int[] arr, int target) {
         // code here
@@ -27,5 +27,20 @@ class Solution {
         return list;
         
         
+    }
+}
+
+// 005->  Kadane's Algorithm
+class Solution {
+    int maxSubarraySum(int[] arr) {
+        // Code here
+        int currSum = arr[0];
+        int maxSum  = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            currSum = Math.max(arr[i], currSum + arr[i]);
+            maxSum  = Math.max(maxSum, currSum);
+        }
+        return maxSum;
     }
 }
